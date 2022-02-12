@@ -81,6 +81,7 @@ cfg_rt! {
 ///
 /// [`Handle`]: Handle
 pub(crate) fn enter(new: Handle) -> EnterGuard {
+    panic!("ENTERING");
     match try_enter(new) {
         Some(guard) => guard,
         None => panic!("{}", crate::util::error::THREAD_LOCAL_DESTROYED_ERROR),
